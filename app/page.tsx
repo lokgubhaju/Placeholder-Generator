@@ -73,7 +73,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-8 px-4">
+    <div className="min-h-screen bg-gray-50 dark:bg-black py-8 px-4">
       <div className="max-w-7xl mx-auto">
         <header className="mb-8 text-center">
           <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-2">
