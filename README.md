@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Placeholder Asset Generator
+
+A client-side web application for generating custom placeholder images and videos for web development. Perfect for testing websites without waiting for final assets.
+
+## Features
+
+- **Image Generation**: Create placeholder images of any size with custom colors and text
+- **Video Generation**: Generate placeholder videos with custom duration, dimensions, and styling
+- **Live Preview**: See your placeholder in real-time as you adjust settings
+- **Quick Presets**: One-click presets for common sizes (HD, Full HD, 4K, Instagram Story, etc.)
+- **Customizable**: Full control over dimensions, colors, text, duration, and FPS
+- **Privacy-First**: All processing happens in your browser - no data is sent to any server
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+ and npm
+
+### Installation
+
+1. Install dependencies:
+
+```bash
+npm install
+```
+
+2. Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Building for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## Usage
 
-To learn more about Next.js, take a look at the following resources:
+1. **Select Asset Type**: Choose between Image or Video mode
+2. **Set Dimensions**: Enter width and height, or use a quick preset
+3. **Customize Colors**: Pick background and text colors using color pickers or hex codes
+4. **Add Text** (optional): Enter custom text, or leave empty for auto-generated dimensions
+5. **Configure Video Settings** (if generating video): Set duration in seconds and FPS
+6. **Preview**: See a live preview of your placeholder
+7. **Generate**: Click the generate button to download your asset
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Supported Formats
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Images**: PNG format
+- **Videos**: WebM format (VP8/VP9 codec)
 
-## Deploy on Vercel
+## Technology Stack
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Framework**: Next.js 16 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Image Generation**: HTML5 Canvas API
+- **Video Generation**: Canvas API + MediaRecorder API
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Browser Support
+
+- Chrome/Edge: Full support
+- Firefox: Full support
+- Safari: Full support (may have limitations with video codecs)
+
+## Project Structure
+
+```
+├── app/
+│   ├── layout.tsx          # Root layout
+│   ├── page.tsx             # Main application page
+│   └── globals.css          # Global styles
+├── components/
+│   ├── ui/                  # Reusable UI components
+│   │   ├── Button.tsx
+│   │   ├── Input.tsx
+│   │   ├── Card.tsx
+│   │   └── Label.tsx
+│   ├── AssetTypeSelector.tsx
+│   ├── ConfigurationPanel.tsx
+│   ├── PreviewDisplay.tsx
+│   └── SizePresets.tsx
+└── hooks/
+    ├── useImageGenerator.ts  # Image generation logic
+    └── useVideoGenerator.ts  # Video generation logic
+```
+
+## License
+
+MIT
